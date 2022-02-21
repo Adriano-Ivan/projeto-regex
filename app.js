@@ -45,7 +45,7 @@ function validaCPF() {
 }
 
 function validaEmail() {
-  //const regex = ;
+  const regex = /\w+@\w+\.\w+/;
   if (regex.test(email.value)) {
     console.log(email.value);
   } else {
@@ -54,7 +54,7 @@ function validaEmail() {
 }
 
 function validaSenha() {
-  //const regex = ;
+  const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]{3})(?=.*[!#@%&]).{6,15}$/;
   if (regex.test(senha.value)) {
     console.log(senha.value);
   } else {
@@ -71,7 +71,7 @@ function validaConfirmaSenha() {
 }
 
 function validaCartao() {
-  //const regex = ;
+  const regex = /^[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}$/;
   if (regex.test(numCartao.value)) {
     console.log(numCartao.value);
   } else {
@@ -80,7 +80,7 @@ function validaCartao() {
 }
 
 function validaData() {
-  //const regex = ;
+  const regex = /^\d{4}[/](0[1-9]|1[012])[/](0[1-9]|[12][0-9]|3[12])$/;
   if (regex.test(dataValidade.value)) {
     console.log(dataValidade.value);
   } else {
@@ -89,7 +89,7 @@ function validaData() {
 }
 
 function validaCodigo() {
-  //const regex = ;
+  const regex = /^[0-9]{3}$/;
   if (regex.test(codigoSeg.value)) {
     console.log(codigoSeg.value);
   } else {
@@ -102,6 +102,12 @@ function validaFormulario() {
     validaNome();
     validaCelular();
     validaCPF();
+    validaEmail();
+    validaSenha();
+    validaConfirmaSenha();
+    validaCartao();
+    validaCodigo();
+    validaData();
     alert("Dados cadastrados com sucesso!!");
   } catch (erro) {
     mensagemErro.innerHTML = erro.message;
